@@ -1,184 +1,238 @@
-# NDU NAPSS E-Library 📚
+# NDU NAPSS E-Library
 
-Official Digital Library for the National Association of Political Science Students, Niger Delta University.
+**Official Digital Library for the National Association of Political Science Students, Niger Delta University**
+
+A comprehensive digital platform for accessing Political Science educational resources, including textbooks, lecture notes, past questions, journals, and final year projects.
 
 ## 🎯 Project Overview
 
-A comprehensive digital library platform designed specifically for Political Science students at NDU. It provides easy access to:
-- Course materials organized by academic level (100-400)
-- Books and lecture notes
-- Past examination questions
-- Research papers and journals
-- NAPSS official documents
-- Leadership resources
+This project is divided into 5 development phases:
 
-## 🛠 Tech Stack
+### **Phase 1 – User System**
+- User Registration & Login (Student & Admin)
+- Password Reset functionality
+- Email Verification
+- Role-based authentication
 
-### Frontend
-- **React** 18.x - UI library
-- **Tailwind CSS** - Styling
-- **React Router** - Navigation
-- **Axios** - API client
-- **React Query** - Data fetching
-- **Framer Motion** - Animations
+### **Phase 2 – Digital Library**
+- Upload PDF books
+- Read books online
+- Download books
+- Book covers & metadata
+- Categories & organization
+- Advanced Search (course code, title, author, level)
 
-### Backend
-- **Node.js** 18.x - Runtime
-- **Express.js** 4.x - Web framework
-- **PostgreSQL** - Database
-- **Sequelize** - ORM
-- **JWT** - Authentication
-- **Bcrypt** - Password hashing
-- **Multer** - File uploads
-- **Nodemailer** - Email verification
+### **Phase 3 – Political Science Content**
+- 100, 200, 300, 400 Level courses
+- Lecture notes
+- Past questions
+- Journals & research papers
+- Final year projects
 
-### DevOps
-- **Frontend Deployment** - Vercel
-- **Backend Deployment** - Render
-- **Database** - PostgreSQL (Cloud provider)
+### **Phase 4 – Admin Panel**
+- Upload books & lecture notes
+- Manage students & courses
+- Announcements system
+- Analytics & reporting
 
-## 🎨 Design Theme
+### **Phase 5 – Polish**
+- Dark mode
+- Reading progress tracking
+- Favourite books
+- Notifications
+- Advanced PDF viewer
+- Book recommendations
 
-- **Primary Color**: Royal Blue (#4169E1)
-- **Secondary Color**: Sky Blue (#87CEEB)
-- **Background**: White (#FFFFFF)
-- **NAPSS Logo**: Integrated throughout
-
-## 📁 Project Structure
+## 🗂️ Project Structure
 
 ```
 ndu-napss-e-library/
-├── frontend/                 # React application
+├── frontend/                    # React frontend application
 │   ├── src/
-│   │   ├── components/      # Reusable components
-│   │   ├── pages/           # Page components
-│   │   ├── services/        # API services
-│   │   ├── hooks/           # Custom hooks
-│   │   ├── context/         # React context
-│   │   ├── styles/          # Tailwind config
+│   │   ├── components/
+│   │   │   ├── Navigation/      # Main navigation menu
+│   │   │   ├── Auth/            # Authentication components
+│   │   │   ├── Library/         # E-Library components
+│   │   │   ├── Books/           # Book reader & viewer
+│   │   │   ├── Content/         # Political Science content
+│   │   │   ├── Admin/           # Admin panel components
+│   │   │   └── Dashboard/       # User & Admin dashboards
+│   │   ├── pages/               # Page routes
+│   │   ├── styles/              # Global & dark mode styles
+│   │   ├── utils/               # Helper functions
 │   │   └── App.jsx
+│   ├── public/
 │   ├── package.json
 │   └── .env.example
 │
-├── backend/                  # Express API
+├── backend/                     # Node.js/Express backend
 │   ├── src/
-│   │   ├── routes/          # API routes
-│   │   ├── controllers/     # Request handlers
-│   │   ├── models/          # Database models
-│   │   ├── middleware/      # Auth, validation
-│   │   ├── services/        # Business logic
-│   │   ├── utils/           # Utilities
-│   │   ├── config/          # Configuration
+│   │   ├── routes/
+│   │   │   ├── auth.js         # Authentication endpoints
+│   │   │   ├── books.js        # Book management endpoints
+│   │   │   ├── courses.js      # Course management endpoints
+│   │   │   ├── users.js        # User management endpoints
+│   │   │   └── admin.js        # Admin operations endpoints
+│   │   ├── models/              # Database schemas
+│   │   ├── controllers/         # Business logic
+│   │   ├── middleware/          # Auth & validation middleware
+│   │   ├── utils/               # Helper functions
 │   │   └── server.js
-│   ├── uploads/             # File storage
+│   ├── config/
+│   │   └── database.js
+│   ├── uploads/                 # File storage
 │   ├── package.json
-│   └── .env.example
+│   ├── .env.example
+│   └── .gitignore
 │
-└── database/                # Database setup
-    ├── migrations/          # Schema migrations
-    └── seeders/            # Demo data
+├── database/
+│   ├── migrations/              # Database migration files
+│   └── seeds/                   # Seed data for testing
+│
+├── docs/
+│   ├── API.md                   # API documentation
+│   ├── DATABASE.md              # Database schema documentation
+│   ├── SETUP.md                 # Development setup guide
+│   └── PHASES.md                # Detailed phase descriptions
+│
+├── .gitignore
+└── README.md
 ```
 
-## 🚀 Quick Start
+## 🌐 Navigation Menu Structure
+
+The application includes the following menu items organized as:
+
+**Main Navigation (Public Access):**
+- Home
+- E-Library
+- Courses
+- Past Questions
+- Journals
+- Research Repository
+- Announcements
+- NAPSS Executives
+- About NAPSS
+- Contact
+
+**User Navigation (Authenticated Users):**
+- Student Portal (for students)
+- Admin Portal (for super admins)
+
+## 🛠️ Tech Stack
+
+### Frontend
+- **Framework**: React 18+
+- **Styling**: Tailwind CSS
+- **State Management**: Redux Toolkit
+- **PDF Viewer**: React-PDF or similar
+- **UI Components**: Shadcn/ui or Material-UI
+- **Routing**: React Router v6
+
+### Backend
+- **Runtime**: Node.js 18+
+- **Framework**: Express.js
+- **Database**: PostgreSQL or MongoDB
+- **Authentication**: JWT (JSON Web Tokens)
+- **Password Hashing**: Bcrypt
+- **File Storage**: AWS S3 or local storage
+- **Email**: Nodemailer or SendGrid
+- **ORM**: Sequelize or Mongoose
+
+### DevOps
+- **Version Control**: Git/GitHub
+- **Hosting**: Vercel (Frontend), Render/Railway (Backend)
+- **CI/CD**: GitHub Actions
+- **Database Hosting**: AWS RDS / Supabase
+
+## 🚀 Getting Started
 
 ### Prerequisites
-- Node.js 18.x
-- PostgreSQL 12.x
-- npm or yarn
+- Node.js 16+ and npm/yarn
+- PostgreSQL 12+ or MongoDB
+- Git
 
-### Frontend Setup
+### Installation
+
+#### Clone the repository
 ```bash
-cd frontend
-npm install
-npm start
+git clone https://github.com/ndu-napss-e-library/ndu-napss-e-library.git
+cd ndu-napss-e-library
 ```
 
-### Backend Setup
+#### Backend Setup
 ```bash
 cd backend
 npm install
+cp .env.example .env
+# Edit .env with your configuration
 npm run migrate
+npm run dev
+```
+
+#### Frontend Setup
+```bash
+cd frontend
+npm install
+cp .env.example .env
+# Edit .env with your API endpoint (http://localhost:5000)
 npm start
 ```
 
-## 📚 Features
+For detailed setup instructions, see [SETUP.md](docs/SETUP.md)
 
-### User Roles
-- **Students** - Browse, search, download materials
-- **Administrators** - Upload, manage, analytics
-- **Super Admin** - Full system control
+## 📚 Documentation
 
-### Core Features
-- ✅ User authentication (JWT)
-- ✅ Book/material search and filtering
-- ✅ Online reading capability
-- ✅ PDF downloads
-- ✅ Bookmarking system
-- ✅ User dashboard
-- ✅ Admin panel
-- ✅ Email notifications
-- ✅ Download analytics
-- ✅ Responsive design
+- **[API Documentation](docs/API.md)** - REST API endpoints and usage
+- **[Database Schema](docs/DATABASE.md)** - Database models and relationships
+- **[Development Setup](docs/SETUP.md)** - Step-by-step setup guide
+- **[Phase Details](docs/PHASES.md)** - Detailed breakdown of each development phase
 
-## 🔐 Security
+## 👥 User Roles
 
-- JWT token-based authentication
-- Bcrypt password hashing
-- Email verification
+1. **Student** - Access e-library, view courses, download materials, track reading progress
+2. **Super Admin** - Manage users, upload content, view analytics, manage courses
+3. **Guest** - Limited access to public content (Home, About, Contact)
+
+## 🔐 Security Features
+
+- Password hashing with bcrypt
+- JWT-based authentication with refresh tokens
+- Email verification for account creation
 - Role-based access control (RBAC)
-- Protected file uploads
-- Input validation & sanitization
-- CORS configuration
-- Rate limiting
+- Rate limiting on API endpoints
+- CSRF protection
+- Secure file upload validation
+- Input sanitization & validation
 
-## 📱 Responsive Design
+## 📊 Features Status
 
-Fully optimized for:
-- Desktop (1920px+)
-- Tablet (768px - 1024px)
-- Mobile (320px - 767px)
-  - iOS devices
-  - Android devices
-
-## 🌐 Deployment
-
-### Frontend (Vercel)
-```bash
-npm run build
-vercel deploy
-```
-
-### Backend (Render)
-- Connect GitHub repository
-- Set environment variables
-- Deploy with auto-restart on git push
-
-### Database (PostgreSQL)
-- Cloud hosted on AWS RDS, Heroku, or Supabase
-
-## 📖 Documentation
-
-- [Frontend Setup Guide](./frontend/README.md)
-- [Backend Setup Guide](./backend/README.md)
-- [API Documentation](./backend/API.md)
-- [Database Schema](./database/SCHEMA.md)
-
-## 👥 Team
-
-NDU NAPSS E-Library Development Team
-
-## 📄 License
-
-MIT License - See LICENSE file for details
+- [x] Database & schema design
+- [x] Project structure setup
+- [x] Navigation menu planning
+- [ ] Phase 1: User System
+- [ ] Phase 2: Digital Library
+- [ ] Phase 3: Political Science Content
+- [ ] Phase 4: Admin Panel
+- [ ] Phase 5: Polish & Enhancement
 
 ## 🤝 Contributing
 
-We welcome contributions! Please follow the contributing guidelines.
+1. Create a feature branch (`git checkout -b feature/amazing-feature`)
+2. Commit your changes (`git commit -m 'Add amazing feature'`)
+3. Push to the branch (`git push origin feature/amazing-feature`)
+4. Open a Pull Request
 
-## 📞 Support
+## 📝 License
 
-For issues or questions, please open an issue on GitHub.
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## 📧 Contact
+
+For inquiries or support, contact the NDU NAPSS E-Library team.
 
 ---
 
-**Made with ❤️ for NDU NAPSS**
+**Project Status**: Phase 1 - User System Setup
+**Last Updated**: July 1, 2026
+**Maintained by**: NDU NAPSS Development Team
